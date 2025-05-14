@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest - Rent Books</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.755);
+  }
+
+  .ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    h2 {
+      display: flex;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+
+    .box1 {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+
+      img {
+        width: 200px;
+      }
+    }
+  }
+
+  .lol {
+    display: none;
+  }
+
+  .h {
+    font-size: 40px;
+    padding: 20px 10px;
+  }
+
+  .koe {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: white;
+  }
+
+  @media (max-width: 500px) {
+    .container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ul {
+      position: relative;
+      top: 150px;
+      right: 0px;
+      background-color: black;
+      flex-direction: column;
+      align-items: end;
+      padding: 20px;
+      display: none;
+      margin: 0;
+    }
+
+    .ul.show {
+      display: block;
+    }
+
+    .lol {
+      display: block;
+    }
+
+  }
+</style>
+
+<body>
+  <div class="nav">
+    <h1>Booknest</h1>
+    <div class="ul">
+      <h2>Home</h2>
+      <h2>Browse</h2>
+      <h2 id="h2">Cart <span id="span"></span></h2>
+    </div>
+    <h1 class="lol">menu</h1>
+  </div>
+  <div id="cart-box" style="
+position: fixed;
+bottom: -100%;
+left: 0;
+width: 100%;
+background: white;
+box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+transition: bottom 0.4s;
+padding: 20px;
+z-index: 999;
+">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+  </div>
+  <h1 class="h">Available Books</h1>
+  <div class="container">
+    <div id="box" class="box1">
+      <img src="assets/sample-books/book-1984.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button onclick="btn()">Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-alchemist.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-anna.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-bravenew.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-catcher.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-crime.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-donquixote.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-gatsby.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-hobbit.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+    <div class="box1">
+      <img src="assets/sample-books/book-janeeyre.jpg" alt="">
+      <h2>1984</h2>
+      <p>by author 1</p>
+      <p>$1.50 / day</p>
+      <button>Rent</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
